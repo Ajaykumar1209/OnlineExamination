@@ -1,0 +1,132 @@
+body{
+    /* background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1)0%, rgba(121,32,153,1)86%); */
+    background: url('ajay.jpg') no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Poppins','sans-serif';
+}
+#form_contain{
+    width: 55%;
+    margin: 3vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 12px 3px;
+}
+.question_contain{
+    margin-right: 150%;
+}
+#question{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poppins',sans-serif;
+}
+.head_contain{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.btn{
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: #792099;
+    color: white;
+    font-family: auto;
+    margin-top: 5%;
+    border-radius: 5px;
+    margin-left: 4%;
+    cursor: pointer;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left:-30px;
+    width: 10px;
+    rotate: 35deg;
+    background-color: #fff;
+}
+.btn:hover::before{
+    left: calc(100% + 30px);
+    transition: left 500ms;
+}
+.btn1{
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: #792099;
+    color: white;
+    font-family: auto;
+    border-radius: 5px;
+    margin-left: 60%;
+    cursor: pointer;
+}
+.btn1::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left:-30px;
+    width: 10px;
+    rotate: 35deg;
+    background-color: #fff;
+}
+.btn1:hover::before{
+    left: calc(100% + 30px);
+    transition: left 500ms;
+}
+.btn2{
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: #792099;
+    color: white;
+    font-family: auto;
+    border-radius: 5px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.btn2:disabled{
+    cursor: no-drop;
+}
+.btn2::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left:-30px;
+    width: 10px;
+    rotate: 35deg;
+    background-color: #fff;
+}
+.btn2:hover::before{
+    left: calc(100% + 30px);
+    transition: left 500ms;
+}
+.radio_btn{
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+
+}
+.radio_input{
+    padding: 10px;
+}
+.question_number{
+    margin-left: 5%;
+    font-size: 20px;
+    font-family: 'Poppins','sans-serif';
+}
+.heading{
+    text-shadow: black 3px -2px;
+    font-size: 40px;
+    color: white;
+    margin-left: 35%;
+}

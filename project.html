@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online exam</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="pageLoad()">
+    <div class="container">
+      <label class="logo">XPLOCODE INFOTECH</label>
+      <p class="head">Welcome To Online Exam</p>
+      <form action="simple.html" id="form" name="form1"  onsubmit="return validation()">
+        <h1>Login Student Id</h1>
+        <div class="input">
+          <label class="username1">Username</label>
+          <input type="text" id="username" oninput="change()" name="username"/>
+          <div class="errormsg" id="err1"></div>
+        </div>
+        <div class="input">
+          <label class="password1">Password</label>
+          <input type="password" id="password" name="password" oninput="change()"/>
+          <div class="errormsg" id="err"></div>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <button type="reset" class="btn1">Reset</button>
+      </form>
+      <script>
+        var username = "Ajaykumar";
+        var pin = "12345";
+
+        function validation() {
+          var un = document.getElementById("username").value;
+          var pass = document.getElementById("password").value;
+          if(form1.username.value=="" || form1.password.value==""){
+            if(form1.username.value==""){
+              form1.username.style="border-color:red"
+              document.getElementById('err1').innerHTML ="Enter your username"
+            }
+            if(form1.password.value==""){  
+              form1.password.style="border-color:red"
+              document.getElementById('err').innerHTML ="Enter your password"
+            }  
+              return false
+          }else{
+
+                        if (username == un && pin == pass) {
+                          display();
+                          return true;
+                        } else {
+                            form1.username.style="border-color:red"
+                            form1.password.style="border-color:red"
+                            document.getElementById("err").innerHTML = "Invalid Details";
+                        return false;
+                }
+            }
+          
+        }
+        function change(){
+            if(form1.username.value!=""){
+                form1.username.style="border-color:none"
+                document.getElementById('err1').innerHTML=""         
+            }
+            if(form1.password.value!=""){
+                form1.password.style="border-color:none"
+                document.getElementById('err').innerHTML=""         
+            }
+        }
+        function display(){
+            var name=document.getElementById('username').value
+            localStorage.setItem('student',name)
+        }
+        function pageLoad(){
+            if(form1.username.value==""){
+                  document.getElementById('username').focus()
+            }
+        }    
+        
+      </script>
+    </div>
+  </body>
+</html>

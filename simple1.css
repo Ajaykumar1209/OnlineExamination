@@ -1,0 +1,42 @@
+body{
+    /* background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1)0%, rgba(121,32,153,1)86%); */
+    background: url('ajay.jpg') no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Poppins','sans-serif';
+}
+.container{
+    
+    width: 400px;
+    margin: 5vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 12px 3px;
+}
+.head_container{
+    padding: 25px 25px;
+}
+.score_container{
+    padding: 25px;
+}
+#labelhead{
+    text-shadow: black -1px -1px;
+    color: #792099;
+    font-size: 30px;
+    font-family: 'Poppins',sans-serif;
+}
+.score{
+    text-shadow: black -1px -1px;
+    color: #792099;
+    font-size: 25px;
+    font-family: 'Poppins',sans-serif;
+}
+#label{
+    text-shadow: black -1px -1px;
+    color: #792099;
+    font-size: 25px;
+    font-family: 'Poppins',sans-serif;
+    margin-left: 6%;
+}

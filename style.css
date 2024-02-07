@@ -1,0 +1,116 @@
+body{
+    /* background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1)0%, rgba(121,32,153,1)86%); */
+    background: url('ajay.jpg') no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Poppins','sans-serif';
+}
+#form{
+    width: 400px;
+    margin: 5vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 12px 3px;
+}
+h1{
+    text-align: center;
+    color: #792099;
+}
+.btn{
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: #792099;
+    color: white;
+    font-family: auto;
+    margin-top: 5%;
+    border-radius: 5px;
+    margin-left: 30%;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left:-30px;
+    width: 10px;
+    rotate: 35deg;
+    background-color: #fff;
+}
+.btn:hover::before{
+    left: calc(100% + 30px);
+    transition: left 500ms;
+}
+.btn1{
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: #792099;
+    color: white;
+    font-family: auto;
+    border-radius: 5px;
+    margin-left: 2%;
+}
+.btn1::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left:-30px;
+    width: 10px;
+    rotate: 35deg;
+    background-color: #fff;
+}
+.btn1:hover::before{
+    left: calc(100% + 30px);
+    transition: left 500ms;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.input input{
+    outline: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Poppins','sans-serif';
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: 1px solid rgb(34,193,195);
+}
+.logo{
+    text-shadow: black 3px -2px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Poppins','sans-serif';
+    margin-left: 38%;
+}
+.head{
+    text-shadow: black 3px -2px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Poppins','sans-serif';
+    margin-left: 36%;
+}
+.username1{
+    font-size: 20px;
+    color: #792099;
+    font-weight: bold;
+}
+.password1{
+    font-size: 20px;
+    color: #792099;
+    font-weight: bold;
+}
+.errormsg{
+    border-radius: 10px;
+    margin-top:1%;
+    font-size: 15px;
+    color: red;
+    margin-left: 1%;
+}

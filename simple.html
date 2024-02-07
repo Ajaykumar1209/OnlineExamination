@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online exam</title>
+    <link rel="stylesheet" type="text/css" href="simple.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div id="contain">
+        <label class="heading">Online Examination</label>
+        <form action="simple1.html" name="form2" id="form_contain" onsubmit="display()" >
+            <div class="question_contain">
+                <label class="question_number" id="question_number">Question:</label>
+            </div>
+            <div class="head_contain">
+                <label id="question"></label>
+            </div>
+            <div class="radio_input">
+                <input type="radio" value="" onclick="view()" name="radio_btn" id="radio_idA">
+                <label for="radio_idA" class="radio_btn"  id="optionA">OptionA</label>
+            </div>
+            <div class="radio_input">
+                <input type="radio" value="" onclick="view()"  name="radio_btn" id="radio_idB">
+                <label for="radio_idB" class="radio_btn" id="optionB">OptionB</label>
+            </div>
+            <div class="radio_input">
+                <input type="radio" value=""  onclick="view()" name="radio_btn" id="radio_idC">
+                <label for="radio_idC" class="radio_btn" id="optionC">OptionC</label>
+            </div>
+            <div class="radio_input">
+                <input type="radio" value=""  onclick="view()" name="radio_btn" id="radio_idD">
+                <label for="radio_idD" class="radio_btn" id="optionD">OptionD</label>
+            </div>
+            
+            
+            <button id="Back" class="btn2" type="button" onclick="questionBack()" disabled>Back</button>
+            <button id="next" class="btn" type="button" onclick="questionchange()">Next</button>
+            <button id="submit_id" type="submit" class="btn1" style="visibility: hidden;" onclick="lastanswer()">Submit</button>  
+        </form>    
+    </div>
+          
+</body>
+    <script>
+        const question=[
+            {
+                question:"What does HTML stands for?",
+                a:"Hyperline and text Markup language",
+                b:"Home tool Markup language",
+                c:"Hyper text Markup language",
+                d:"Hyper Markup language",
+                correct:"Hyper text Markup language",
+                selectans:"",
+                
+                
+            },
+            {
+                
+                question:"Who is making the web standards?",
+                a:"Microsoft",
+                b:"Google",
+                c:"Mozila",
+                d:"The world wide web consortium",
+                correct:"The world wide web consortium",
+                selectans:"",
+            },
+            {
+                
+                question:"Who is father of HTML?",
+                a:"Rasmus lerdors",
+                b:"Tim Berners-Lee",
+                c:"Brendan Eich",
+                d:"Sergey Brin",
+                correct:"Tim Berners-Lee",
+                selectans:"",
+            },
+            {
+                
+                question:"What is CSS?",
+                a:"Cascading Style Sheets",
+                b:"Style Sheet",
+                c:"Case Sheet",
+                d:"Case Style Sheet",
+                correct:"Cascading Style Sheets",
+                selectans:"",
+            },
+        ]
+        console.log(question)
+       document.getElementById('question').innerHTML=question[0].question
+        document.getElementById('optionA').innerHTML=question[0].a
+        document.getElementById('optionB').innerHTML=question[0].b
+        document.getElementById('optionC').innerHTML=question[0].c
+        document.getElementById('optionD').innerHTML=question[0].d
+        var answer=question[0].correct;
+                
+        document.getElementById('radio_idA').value=question[0].a
+        document.getElementById('radio_idB').value=question[0].b
+        document.getElementById('radio_idC').value=question[0].c
+        document.getElementById('radio_idD').value=question[0].d
+        form2.radio_btn.value=question[0].selectans
+
+
+        
+        var mark=0;
+        
+        var i=0;
+        document.getElementById('question_number').innerHTML="Question:"+(i+1)
+
+
+        function questionchange(){
+          
+            // form2.radio_btn.value=question[i].selectans
+                i++;
+                //  if(form2.radio_btn.value==question[i].correct){
+                //      mark++;   
+                // }
+                document.getElementById('question').innerHTML=question[i].question
+                document.getElementById('optionA').innerHTML=question[i].a
+                document.getElementById('optionB').innerHTML=question[i].b
+                document.getElementById('optionC').innerHTML=question[i].c
+                document.getElementById('optionD').innerHTML=question[i].d
+                
+                document.getElementById('radio_idA').value=question[i].a
+                document.getElementById('radio_idB').value=question[i].b
+                document.getElementById('radio_idC').value=question[i].c
+                document.getElementById('radio_idD').value=question[i].d
+                form2.radio_btn.value=question[i].selectans
+                
+                console.log(form2.radio_btn.value + "-" + question[i].selectans + "-" + i)
+
+                answer=question[i].correct              
+                if(i==3){
+                    document.getElementById('next').disabled=true
+                    document.getElementById('submit_id').style="visibility:visible"
+                }
+            document.getElementById('question_number').innerHTML="Question:"+(i+1)
+            document.getElementById('Back').disabled=false
+            if(question[i].selectans==""){
+            document.getElementById('radio_idA').checked=false;
+            document.getElementById('radio_idB').checked=false;
+            document.getElementById('radio_idC').checked=false;
+            document.getElementById('radio_idD').checked=false;
+            }
+        }
+        function lastanswer(){
+                //answer=question[i].correct
+                for(j=0;j<=3;j++){
+                if(question[j].selectans==question[j].correct){
+                    mark++
+                }
+            }
+                score()
+        }
+        
+        function score(){     
+            localStorage.setItem('score1',mark)
+        }
+        function questionBack(){
+            i--;
+            document.getElementById('question_number').innerHTML="Question:"+(i+1)
+            document.getElementById('question').innerHTML=question[i].question
+            document.getElementById('optionA').innerHTML=question[i].a
+            document.getElementById('optionB').innerHTML=question[i].b
+            document.getElementById('optionC').innerHTML=question[i].c
+            document.getElementById('optionD').innerHTML=question[i].d
+
+            document.getElementById('radio_idA').value=question[i].a
+            document.getElementById('radio_idB').value=question[i].b
+            document.getElementById('radio_idC').value=question[i].c
+            document.getElementById('radio_idD').value=question[i].d
+            document.getElementById('next').disabled=false   
+            form2.radio_btn.value=question[i].selectans  
+            console.log(form2.radio_btn.value + "-" + question[i].selectans + "-" + (i))
+            
+            if(i==0){
+                document.getElementById('Back').disabled=true
+            }
+        }
+        function view(){
+            var ans=form2.radio_btn.value
+            console.log(ans)
+            
+            question[i].selectans=ans
+            console.log(question[i]) 
+        }
+    </script>
+</html>

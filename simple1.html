@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online exam</title>
+    <link rel="stylesheet" type="text/css" href="simple1.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="head_container">
+            <label id="labelhead">Your Answer Submitted Successfully</label>
+        </div>
+        <div>
+            <label id="label"></label>
+        </div>
+        <div class="score_container">
+            <label class="score" id="score_id">Your Score:</label>
+        </div>
+    </div>
+</body>
+    <script>
+        document.getElementById('label').innerHTML='Hii     '+(localStorage.getItem('student'))
+        document.getElementById('score_id').innerHTML='Your score is   '+(localStorage.getItem('score1'))
+    </script>
+</html>
